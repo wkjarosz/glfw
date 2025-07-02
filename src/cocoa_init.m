@@ -725,12 +725,12 @@ void _glfwTerminateCocoa(void)
 //////                        GLFW native API                       //////
 //////////////////////////////////////////////////////////////////////////
 
-const char* const* glfwGetOpenedFilenames(void)
+const char* const* glfwGetCocoaOpenedFilenames(void)
 {
     return (const char* const*) _glfw.ns.openedFilenames;
 }
 
-void glfwSetOpenedFilenamesCallback(GLFWopenedFilenamesFun callback)
+void glfwSetCocoaOpenedFilenamesCallback(void (*callback)(const char*))
 {
     _glfw.ns.openedFilenamesCallback = callback;
 }

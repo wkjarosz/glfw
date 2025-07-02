@@ -253,7 +253,6 @@ GLFWAPI HGLRC glfwGetWGLContext(GLFWwindow* window);
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_COCOA)
-typedef void (*GLFWopenedFilenamesFun)(const char*);
 
 /*! @brief Returns the `CGDirectDisplayID` of the specified monitor.
  *
@@ -314,12 +313,12 @@ GLFWAPI id glfwGetCocoaView(GLFWwindow* window);
 *  @thread_safety This function may be called from any thread.  Access is not
 *  synchronized.
 *
-*  @since Added in version 3.4.
+*  @since Added in version 3.5.
 *
 *  @ingroup native
 */
-const char* const* glfwGetOpenedFilenames(void);
-void glfwSetOpenedFilenamesCallback(GLFWopenedFilenamesFun callback);
+const char* const* glfwGetCocoaOpenedFilenames(void);
+void glfwSetCocoaOpenedFilenamesCallback(void (*callback)(const char*));
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_NSGL)
